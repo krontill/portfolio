@@ -5,18 +5,48 @@ html, body {
 }
 
 .page {
-    // Стили для body
-}
-
-.page__wrapper {
-    min-height: 100%;
-    margin-bottom: -50px;
-}
-
-* html .page__wrapper {
+    display: flex;
+    flex-direction: column;
     height: 100%;
+    max-width: 1920px;
+    background: @page-bg;
+    margin: 0 auto;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: @page-color;
+    box-shadow: 0 0 16px @page-shadow;
+    &__wrapper {
+        flex: 1 0 auto;
+        background: url('%=static=%general/bright_squares.png');
+    }
+    &__header,
+    &__footer {
+        background: url('%=static=%general/random_grey_variations.png');
+        color: @page-bg;
+        box-shadow: 0 0 16px @page-shadow;
+    }
+    &__footer {
+        flex: 0 0 auto;
+    }
 }
 
-.page__buffer {
-    height: 50px;
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+a {
+    color: @link;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+        color: @link-hover;
+    }
 }
