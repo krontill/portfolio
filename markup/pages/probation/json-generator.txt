@@ -1,0 +1,34 @@
+http://www.json-generator.com/j/bIeqvgHFgy?indent=4
+http://habrahabr.ru/post/132286/
+
+[
+    '{{repeat(10, 15)}}',
+    {
+        id: '{{index()}}',
+        guid: '{{guid()}}',
+        name: '{{firstName()}}',
+        family: '{{surname()}}',
+        patronymic: '{{surname()}}',
+        gender: '{{gender()}}',
+        dateBirth: '{{date(new Date(1984, 0, 1), new Date(1998, 0, 1), "YYYY-MM-dd")}}',
+        dateReceipt: '{{date(new Date(2004, 0, 1), new Date(), "YYYY-MM-dd")}}',
+        listItems: function (tags) {
+            var listItem = [
+{'name' : 'Булева алгебра', 'Всего часов' : 90, 'Пропущено' : tags.numeric(40, 90), 'По уважительной причине' : tags.numeric(0, 20) },
+{'name' : 'Математика', 'Всего часов' : 98, 'Пропущено' : tags.numeric(20, 98), 'По уважительной причине' : tags.numeric(0, 20) },
+{'name' : 'Астрономия', 'Всего часов' : 28, 'Пропущено' : tags.numeric(20, 28), 'По уважительной причине' : tags.numeric(0, 20) },
+{'name' : 'Физика', 'Всего часов' : 28, 'Пропущено' : tags.numeric(20, 28), 'По уважительной причине' : tags.numeric(0, 20) },
+{'name' : 'Начертательная геометрия', 'Всего часов' : 28, 'Пропущено' : tags.numeric(20, 28), 'По уважительной причине' : tags.numeric(0, 20) },
+{'name' : 'Статистика', 'Всего часов' : 48, 'Пропущено' : tags.numeric(30, 48), 'По уважительной причине' : tags.numeric(0, 20) },
+{'name' : 'Матан', 'Всего часов' : 48, 'Пропущено' : tags.numeric(20, 48), 'По уважительной причине' : tags.numeric(0, 20) },
+{'name' : 'История', 'Всего часов' : 48, 'Пропущено' : tags.numeric(20, 48), 'По уважительной причине' : tags.numeric(0, 20) },
+{'name' : 'Программирование', 'Всего часов' : 148, 'Пропущено' : tags.numeric(50, 148), 'По уважительной причине' : tags.numeric(0, 20) }
+            ];
+			var result = [];
+            for(var i = 0; i < tags.numeric(3, listItem.length - 1); i++) {
+				result[i] = listItem[i];
+			}
+            return result;
+        }
+    }
+]

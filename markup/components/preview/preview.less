@@ -1,0 +1,30 @@
+.preview {
+    border-radius: 16px;
+    background: @preview-bg;
+    box-shadow: 0 0 8px @preview-shadow;
+    padding: 16px;
+    margin: 16px 0;
+    width: 288px;
+    &__img {
+        box-shadow: 0 0 16px @preview-img-shadow;
+        max-width: 100%;
+        margin: 0 0 16px;
+    }
+    &__title {
+        color: @preview-color;
+        &:hover,
+        &:focus {
+            color: @preview-color;
+        }
+    }
+    &__text {
+        margin: 16px 0 0;
+    }
+    &__date {
+        display: none;
+    }
+
+    &--primary {
+        width: 432px;
+    }
+}
