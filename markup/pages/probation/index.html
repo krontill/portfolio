@@ -1,0 +1,102 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Список студентов - тестовое задание от Щербы Сергея.</title>
+    <meta http-equiv="Content-Type" charset="utf-8" content="text/html">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/reset.css" type="text/css"/>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <script src="js/script.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="header">
+        <span class="list-title">Список студентов</span>
+        <span class="group">MT-202</span>
+        <a class="button print" href="javascript:window.print(); void 0;"><img src="images/print.png" alt=""/>Распечатать</a>
+    </div>
+    <div class="content">
+        <span class="larr">&larr; </span><a class="back" href="#">Вернуться к списку групп</a>
+
+        <h1 id="fio"></h1>
+
+        <div class="left-block">
+            <a class="button add-student" href="#" id="add-student"><img src="images/add.png" alt=""/> Добавить студента</a>
+            <a class="button save blue" href="#" id="save-student"><img src="images/check.png" alt=""/>Сохранить
+                изменения</a>
+            <ul class="list-student"></ul>
+        </div>
+        <div class="right-block">
+            <div class="title">Стандартные личные данные</div>
+            <a class="delete" id="delete-student" href="#">Удалить</a>
+
+            <div class="field">
+                <label for="family">
+                    <span>Фамилия</span>
+                    <input type="text" name="family" id="family" value=""/>
+                    <span class="error-message"></span>
+                </label>
+            </div>
+            <div class="field">
+                <label for="name">
+                    <span>Имя</span>
+                    <input type="text" name="name" id="name" value=""/>
+                    <span class="error-message"></span>
+                </label>
+            </div>
+            <div class="field">
+                <label for="patronymic">
+                    <span>Отчество</span>
+                    <input type="text" name="patronymic" id="patronymic" value=""/>
+                    <span class="error-message"></span>
+                </label>
+            </div>
+            <div class="field gender">
+                <span>Пол</span>
+                <label for="gender-man">
+                    <input type="radio" name="gender" id="gender-man"/>
+                    <span class="gender">Мужской</span>
+                </label>
+                <label for="gender-woman">
+                    <input type="radio" name="gender" id="gender-woman"/>
+                    <span class="gender">Женский</span>
+                </label>
+            </div>
+            <div class="field">
+                <label for="date-birth">
+                    <span>Дата рождения</span>
+                    <input type="text" id="date-birth" name="date-birth" value=""/>
+                    <span class="error-message"></span>
+                </label>
+            </div>
+            <div class="field">
+                <label for="date-receipt">
+                    <span>Дата поступления</span>
+                    <input type="text" id="date-receipt" name="date-receipt" value=""/>
+                    <span class="error-message"></span>
+                </label>
+            </div>
+            <hr/>
+            <div class="title">Списочек посещаемых предметов</div>
+            <a class="add-item" href="#" id="add-item">Добавить предмет</a>
+
+            <div class="list-item"></div>
+
+            <div class="graph">
+                <img src="images/graph.png" alt=""/>
+
+                <div id="graph-line"></div>
+            </div>
+            <canvas id="chart" width="700" height="420"></canvas>
+            <div class="chart">
+                <img src="images/chart.png" alt=""/>
+                <div id="all-clear"></div>
+                <div id="good-clear"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,332 @@
+body {
+    background: url(../images/bg.png) repeat;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    color: #000000;
+}
+
+a {
+    color: #3072c4;
+}
+
+a:hover,
+a:focus,
+a:active {
+
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 21px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+h4 {
+    font-size: 14px;
+}
+
+h5 {
+    font-size: 11px;
+}
+
+h6 {
+    font-size: 8px;
+}
+
+.wrapper {
+    width: 980px;
+    margin: 0 auto;
+}
+
+.header {
+    height: 56px;
+    color: #404040;
+}
+
+.header .list-title {
+    font-size: 28px;
+    padding: 8px 0 0 28px;
+    display: inline-block;
+}
+
+.group {
+    font-size: 16px;
+    position: relative;
+    top: -2px;
+    left: 32px;
+    background: url(../images/arrow.png) no-repeat 100% 9px;
+    padding: 0 30px 0 0;
+}
+
+.print {
+    float: right;
+    margin: 14px 30px 0 0;
+}
+
+.button {
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    color: #000000;
+    text-shadow: 0 1px 0 #ffffff;
+    text-decoration: none;
+    background: #fdfdfd;
+    background: linear-gradient(#fdfdfd, #dfdfdf);
+    box-shadow: 0 1px 0 #ababab;
+    display: inline-block;
+    padding: 6px 18px 5px 14px;
+}
+
+.button img {
+    position: relative;
+    left: -6px;
+    top: 2px;
+}
+
+.button.blue {
+    color: #ffffff;
+    background: #009bfe;
+    background: linear-gradient(#009bfe, #007ecf);
+    border: 1px solid #007dcd;
+    box-shadow: 0 1px 0 #00558b;
+    text-shadow: 0 -1px 0 #00558b;
+}
+
+.button:hover,
+.button:focus,
+.button:active {
+    opacity: 0.666;
+}
+
+.content {
+    border-top: 10px solid #007dcd;
+    background: #ffffff url(../images/substrate.png);
+    box-shadow: 0 1px 1px #c0c0c0;
+    overflow: hidden;
+    padding: 15px 30px 50px 20px;
+}
+
+.left-block {
+    width: 180px;
+    float: left;
+}
+
+.left-block .button {
+    width: 150px;
+    padding: 6px 4px 5px 14px;
+}
+
+.list-student {
+    margin: 26px 0;
+    position: relative;
+}
+
+.list-student:before {
+    content: "";
+    background: url(../images/shadow.png) repeat-y top right;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    width: 56px;
+}
+
+.list-student > li {
+    padding-left: 10px;
+    line-height: 32px;
+    height: 32px;
+    overflow: hidden;
+}
+
+.list-student > li.active {
+    background: #ffffff;
+    border-left: 1px solid #d7d7d7;
+    border-top: 1px solid #d7d7d7;
+    border-bottom: 1px solid #d7d7d7;
+    border-radius: 3px 0 0 3px;
+    position: relative;
+    z-index: 101;
+}
+
+.list-student > li.active:before {
+    content: "";
+    background: url(../images/shadow-active-li.png) no-repeat top right;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    width: 56px;
+    margin-top: 1px;
+}
+
+.list-student > li.active a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.list-student > li > a {
+    white-space: nowrap;
+}
+
+.right-block {
+    margin-left: 180px;
+}
+
+.larr {
+    color: #3072c4;
+    margin-left: 8px;
+}
+
+.right-block {
+    box-shadow: 0 1px 5px #cfcfcf;
+    padding: 23px 25px;
+    background: #ffffff;
+    position: relative;
+}
+
+#fio {
+    margin: 7px 8px 18px 8px;
+}
+
+.button.add-student {
+    margin: 22px 0 0 0;
+}
+
+.button.save {
+    margin: 9px 0 0 0;
+}
+
+.title {
+    font-size: 20px;
+    margin: 0 0 19px 0;
+}
+
+hr {
+    border: none; /* Убираем границу для браузера Firefox */
+    color: #f2f2f2; /* Цвет линии для остальных браузеров */
+    background-color: #f2f2f2; /* Цвет линии для браузера Firefox и Opera */
+    height: 1px; /* Толщина линии */
+    margin: 37px 0;
+}
+
+.delete,
+.add-item {
+    position: absolute;
+    right: 25px;
+    margin-top: -39px;
+}
+
+input[type="text"] {
+    background: #ffffff;
+    border: 1px solid #d9d9d9;
+    border-top-color: #a9a9a9;
+    padding: 6px 9px;
+    border-radius: 3px;
+    width: 260px;
+}
+
+input[type="text"]:hover,
+input[type="text"]:focus,
+input[type="text"]:active {
+    background: #ffffff;
+    outline: 1px solid #5199db;
+    outline-offset: -1px;
+    box-shadow: 0 0 1px 1px #5199db;
+}
+
+#date-birth,
+#date-receipt {
+    width: 90px;
+}
+
+.field {
+    padding: 5px 0;
+}
+
+.field.gender {
+    padding: 11px 0;
+}
+
+.field span {
+    width: 128px;
+    display: inline-block;
+}
+
+.field span.gender {
+    width: 80px;
+}
+
+.list-item {
+    overflow: hidden;
+    margin: 34px 0;
+}
+
+.list-item label {
+    width: 33%;
+    display: inline-block;
+    float: left;
+    margin: 6px 0;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    position: relative;
+    top: 2px;
+    cursor: pointer;
+}
+
+input.error {
+    background: #fff0f0;
+    border: 1px solid #c44741;
+    box-shadow: 0 0 1px 1px #c44741;
+}
+
+.field .error-message {
+    width: 210px;
+    margin-left: 15px;
+    color: #c44741;
+}
+
+.graph,
+.chart {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.chart {
+    overflow: hidden;
+    padding: 30px 0;
+}
+
+@media print {
+    .header, .larr, .back, .left-block, .delete, .add-item {display:none;}
+}
+
+.graph ul {
+    overflow: hidden;
+}
+
+.graph li {
+    height: 20px;
+    float: left;
+}
+
+.chart {
+    margin-top: -413px;
+}
+
+#all-clear {
+    position: relative;
+    top: -227px;
+    font-size: 33px;
+}
+
+#good-clear {
+    position: relative;
+    top: -175px;
+    font-size: 24px;
+}
+
