@@ -1,0 +1,187 @@
+<div class="container">
+    <main class="main">
+        <article class="content">
+            <h1>Возможности api googlemaps</h1>
+            <p>
+                У googlemaps на самом деле есть не одно API, а целое семейство многофункциональных API для мобильных
+                (Android и iOS) и веб-приложений.
+            </p>
+            <p>
+                Для Android это Google Maps Android API - карты для приложения Android, и Google Places API for Android
+                - информация о местах. Аналогично для iOS карты и места - Google Maps SDK for iOS и соответственно
+                Google Places API for iOS.
+            </p>
+            <p>
+                Но нас больше интересует конечно же Web API. В Google Maps JavaScript API можно добавлять на карты, в
+                том числе и стилизованные, собственный контент, к примеру 3D-здания, планы помещений и изображения, а
+                также проложить маршрут.
+            </p>
+            <p>
+                Карты у гугла стилизуется по большому множеству параметров, разработан даже специальный инструмент, с
+                помощью которого можно поиграть с
+                <a href="https://github.com/googlemaps/js-samples/blob/gh-pages/styledmaps/wizard/index.html" target="_blank">картой</a>
+                и подобрать ту стилистику, которая максимально будет подходить под дизайн сайта или игры. Можно к
+                примеру из Гомеля сделать кровавую баню и пилить doom.
+            </p>
+            <img src="%=static=%img/assets/blog/api-googlemaps-1-red-gomel.png" alt="api googlemaps red gomel">
+            <p>
+                Далее на выбор есть два варианта. Первый вариант - мы берем url
+                <code style="word-break: break-all;">
+                    (http://maps.googleapis.com/maps/api/staticmap?center=52.425873,31.09663&zoom=12&format=png&sensor=false&size=640x480&maptype=roadmap&style=visibility:on|weight:3|saturation:40|lightness:-41|hue:0xff0000)
+                </code>
+                для Static Map, это когда мы встраиваем карту в виде обычной картинки, т.е не интерактивная карта.
+                Второй вариант это взять Google Maps API v3 Styled Maps JSON.
+            </p>
+            <img src="%=static=%img/assets/blog/api-googlemaps-2-json.png" alt="api googlemaps json">
+            <p>
+                Далее мы его добавляем в нашу интерактивную карту. Делается это просто, сохраняем json в переменную а ее
+                в опции карты.
+            </p>
+            <img src="%=static=%img/assets/blog/api-googlemaps-3-code.png" alt="api googlemaps code">
+            <p>
+                Все что касается мест (в том числе отзывы о них) на карте реализовано это следующим апи - Библиотека
+                Google Places API Javascript Library.
+            </p>
+            <img src="%=static=%img/assets/blog/api-googlemaps-4-placeid.png" alt="api googlemaps placeid">
+            <p>
+                Для примера найдем несколько мест. Выбираем центр Гомеля и ищем в радиусе 500 метров места типа store
+            </p>
+            <img src="%=static=%img/assets/blog/api-googlemaps-5-store.png" alt="api googlemaps store">
+            <p>
+                и быстренько находим Милавицу. Изменим тип на что-нибудь съестное и укажем food, в итоге увидим где
+                можно перекусить, а так как кафе мне не проплачивали за рекламу, то откроем маркер с ГомельХлебПром.
+            </p>
+            <img src="%=static=%img/assets/blog/api-googlemaps-6-food.png" alt="api googlemaps food">
+            <p>
+                Если мест не найдено, то можно изменить радиус в котором происходит поиск. Например в центре Гомеля не
+                густо с аэропортами, поэтому увеличиваем радиус в сто раз и видим один аэропорт за городом.
+            </p>
+            <img src="%=static=%img/assets/blog/api-googlemaps-7-airport.png" alt="api googlemaps airport">
+            <p>
+                Всего типов мест несколько десятков и все их можно посмотреть
+                <a href="https://developers.google.com/places/supported_types#table1" target="_blank">тут</a>.
+                Код который нам помогал в данном примере.
+            </p>
+            <img src="%=static=%img/assets/blog/api-googlemaps-8-code.png" alt="api googlemaps code">
+            <p>
+                Есть сервис связанных с местами - Google Places API Web Service, предназначенный для серверных
+                приложений, но не для мобильных. Позволяет добавлять или удалять информацию о местах. Единичные места
+                можно и вручную добавить на карте а если данных много то не обойтись без этого API.
+            </p>
+            <p>
+                Пример Google Static Maps API мы уже наблюдали выше по тексту когда брали url и получали картинку карты
+                с параметрами передаваемыми в url.
+            </p>
+            <p>
+                Google Maps Embed API помогает пользователям вашего приложения в поиске необходимых мест, используя их
+                собственные персонализированные карты помимо базы данных Google. <a
+                href="https://developers.google.com/maps/documentation/embed/start" target="_blank">Создается карта</a>,
+                например, карта проезда в офис с вокзала, и получаем iframe
+            </p>
+            <img src="%=static=%img/assets/blog/api-googlemaps-9-createmap.png" alt="api googlemaps create map">
+            <p>
+                <code style="word-break: break-all;">
+                    &#123;iframe width="600" height="450" frameborder="0" style="border:0"
+                    src="https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJSTOTda9p1EYR0CrJhCf1Jog&destination=place_id:ChIJmQFetbZo1EYRLzgUwe-1oUY&key=..."
+                    allowfullscreen&#125;&#123;/iframe&#125;
+                </code>
+                <br>
+                Далее меняем ключ на свой и вставляем на страницу сайта.
+            </p>
+            <p>
+                Google Street View Image API похож на Google Static Maps API, только для панорам. После указания
+                параметров получаем ссылочку на панораму и загружаем куда пожелаем. Это изображение может быть как
+                внутри здания (фото красивого собора) так и снаружи (фото главного офиса).
+            </p>
+            <p>
+                Следующий апи будет интересен для автолюбителей и сочувствующих им, ладно шучу, конечно же для
+                разработчиков, но и про авто не соврал - Google Maps Roads API позволяет с помощью GPS находить или
+                определять дорогу, по которой едет автомобиль, и предоставляет дополнительные данные о дороге,
+                ограничениях скорости на её участках.
+            </p>
+            <p>
+                Google Maps Geocoding API для преобразования адресов и географических координат. Не предназначена для
+                работы в режиме реального времени, для этого есть Google Maps JavaScript API Client Geocoder, но суть
+                такая же. Позволяет по долготе и ширине найти конкретный адрес либо наоборот. Отправляем
+                52.42362746556566, 31.013818026251215 а в ответ получаем “Центральный район, Гомель, Беларусь” или
+                наоборот
+            </p>
+            <img src="%=static=%img/assets/blog/api-googlemaps-10-geocode.png" alt="api googlemaps geocode">
+            <p>
+                Код примера <a
+                href="https://developers.google.com/maps/documentation/javascript/examples/geocoding-reverse"
+                target="_blank">тут</a>.
+            </p>
+            <p>
+                Служба Google Maps Distance Matrix API знает расстояния маршрутов между пунктами отправления и
+                назначения и времени для его преодоления.
+            </p>
+            <p>
+                Google Maps Time Zone API - это информация о часовом поясе, смещение от UTC, летнее время для любой
+                точки мира. Отправляется запрос вида
+                <code style="word-break: break-all;">
+                    https://maps.googleapis.com/maps/api/timezone/json?location=39.6034810,-119.6822510&timestamp=1331161200&key=YOUR_API_KEY
+                </code>
+                и получаем ответ
+            </p>
+            <code>
+                {<br>
+                &nbsp;&nbsp;"dstOffset" : 3600,<br>
+                &nbsp;&nbsp;"rawOffset" : -28800,<br>
+                &nbsp;&nbsp;"status" : "OK",<br>
+                &nbsp;&nbsp;"timeZoneId" : "America/Los_Angeles",<br>
+                &nbsp;&nbsp;"timeZoneName" : "Pacific Daylight Time"<br>
+                }
+            </code>
+            <p>
+                Отсюда узнаем местное время суммируя параметр timestamp и значений в полях dstOffset и rawOffset из
+                результата.
+            </p>
+            <p>
+                Google Maps Geolocation API - это информация о местоположении и радиус погрешности, передаваемая от
+                вышек сотовой связи и Wi-Fi, которые может обнаружить мобильник.
+            </p>
+            <p>
+                Google Maps Directions API помогает в поиске оптимального маршрута, который может содержать до 23
+                промежуточных точек с учетом выбранного транспорта. А это может быть велосипед, общественный транспорт,
+                автомобиль и на своих двоих.
+            </p>
+            <p>
+                Google Maps Elevation API располагает данными о высоте для любой точки мира.
+                Вот пример высот по маршруту Гомель - Мозырь - Минск.
+            </p>
+            <img src="%=static=%img/assets/blog/api-googlemaps-11-elevation.png" alt="api googlemaps elevation">
+            <p>
+                Доступ к Google Maps Elevation API осуществляется с помощью интерфейса HTTP. Пользователи Google Maps
+                JavaScript API также могут обратиться к API напрямую, используя объект ElevationService(), что для
+                примера мы и сделали. Пример
+                <a href="https://developers.google.com/maps/documentation/javascript/examples/elevation-simple"
+                   target="_blank">elevation-simple</a>.
+            </p>
+            <p>
+                На базе этих API создано множество сервисов в том числе развлекательных. Шикарнейший пример игра в стиле
+                tower defense - mapstd.com. Еще интересная игра - geoguessr.com. Суть заключается в том что игрока
+                забрасывают в случайное место на планете и надо додуматься где игрок очутился. Еще игра от гугл -
+                playmapscube.com.
+            </p>
+            <p>
+                Полезно будет заглядить на аккаунт на гитхабе <a href="https://github.com/googlemaps"
+                                                                 target="_blank">https://github.com/googlemaps</a>.
+                Если работаете с googlemaps на своем проекте, то там точно найдете полезные библиотеки, такие как Marker
+                Clusterer, которая позволяет при большом количестве маркеров объединять их в кластеры.
+            </p>
+            <p>
+                Возившись с примерами на карте заметил что при поиске по запросу ”Компания по разработке программного
+                обеспечения” в городе Гомель не хватает компании ApCelp, в которой я работал на тот момент.
+            </p>
+            <img src="%=static=%img/assets/blog/api-googlemaps-12-company.png" alt="api googlemaps company">
+            <p>
+                Сделаю доброе дело и добавлю ее на карту.
+            </p>
+            <img src="%=static=%img/assets/blog/api-googlemaps-13-add-company.png" alt="api googlemaps add company">
+            <p>
+                После премодерации маркер появится на карте.
+            </p>
+        </article>
+    </main>
+</div>
