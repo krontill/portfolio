@@ -1,0 +1,184 @@
+<div class="container">
+    <main class="main">
+        <article class="content">
+            <h1>SVG. Двумерная масштабируемая векторная графика</h1>
+            <p class="epigraph"><i><q>Маленький, да удаленький, велик, да дик.</q></i></p>
+            <p>
+                Сразу начну с <a href="http://jsfiddle.net/krontill/dyz2yc7u/" target="_blank">примера SVG</a>, чтобы
+                все были в курсе, о чем тут вообще речь идёт. Перечислю чем так хорош и привлекателен SVG.
+            </p>
+            <h3>Текст vs Картинка</h3>
+            <p>
+                Во-первых это текстовый формат, а значит можно в любом текстовом редакторе просматривать и редактировать
+                - это для тех, кто компилирует в уме, для остальных - графический редактор, например, Adobe Illustrator.
+                Второе следствие из этого, то, что текст в SVG хорошо усваивается (индексируется) поисковыми системами
+                (сеошники ликуют), его также можно выделять и копировать.
+            </p>
+            <p>
+                По размеру получается меньше чем обычная растровая картинка. Хорошо поддается сжатию. Хорошо выглядит на
+                ретина-экранах. В SVG можно вставлять растровую графику (PNG, GIF, JPG). Это для тяжелых случаев.
+            </p>
+            <img src="%=static=%img/assets/blog/svg-1.png" alt="svg">
+            <h3>Масштабирование</h3>
+            <p>
+                SVG масштабируемый, а это значит, что в отличие от обычной растровой картинки при увеличении не теряет в
+                качестве. Также можно увеличивать отдельные куски векторного изображения и вообще прописывать им разные
+                стили и всячески изменять. Давайте в нашем примере уменьшим колонки, дабы не пугать сильно соседей
+                громкой музыкой :) Для этого мы элементам колонки добавим <code>transform="translate(250, 120)
+                scale(0.8)"</code>, где scale - масштаб элемента (если меньше 1, то уменьшает, если больше, то
+                увеличивает), а translate - сдвиг по горизонтали и вертикали. Вообще по фен-шую сдвиг относительно
+                центральной точки в зависимости от коэффициента масштабирования считается по следующей формуле
+                <code>transform="translate(-centerX*(factor-1), -centerY*(factor-1) ) scale(factor)"</code>, но я
+                позволю себе немного побыть дизайнером и сделаю на глазок.
+                <a
+                    href="http://jsfiddle.net/krontill/tkLhjd53/1/"
+                    target="_blank">http://jsfiddle.net/krontill/tkLhjd53/1/</a>
+                Также очевидно что можно было не прописывать трижды код, а добавить класс и в css прописать стили для
+                масштабирования, <a href="http://jsfiddle.net/krontill/t19f99mt/" target="_blank">вот так</a>. Как и к
+                любым тегам на странице, к svg может добраться и javascript, но чем более простой технологией решается
+                задача, тем лучше.
+            </p>
+            <h3>Еще бонусы</h3>
+            <p>
+                Повторное использование с помощью тега use, ссылающегося на нужный id. Допустим, я хочу вставить
+                несколько векторных иконок разного цвета, и одно из них положить на бок -
+                <a href="https://jsfiddle.net/krontill/gpen4km1/1/" target="_blank">да без проблем</a>. Всего лишь
+                надо добавить пару строк: <br>
+                <code>
+                    &lt;use xlink:href="#Layer_x0020_1" fill="yellowgreen" transform="translate(250, 120) scale(0.8)"/&gt;
+                    <br>
+                    &lt;use xlink:href="#Layer_x0020_1" fill="gold"
+                    transform="translate(250, 120) scale(0.666) rotate(90 1000 1000)"/&gt;
+                </code>
+            </p>
+            <img src="%=static=%img/assets/blog/svg-2.png" alt="svg">
+            <p>
+                Встраивание на страницу плюс повторное использование, как в примере выше, приводит к уменьшению
+                количества обращений к серверу, соответственно это приводит к увеличению скорости загрузки сайта.
+            </p>
+            <h3>Анимация</h3>
+            <p>
+                Сразу хочу продемонстрировать широчайшие возможности - пример <a
+                href="http://ivan386.github.io/gravity/gravity.svg" target="_blank">шикарной динамичной анимации</a>.
+                Исходных код можно глянуть на
+                <a href="https://raw.githubusercontent.com/ivan386/gravity/master/gravity.svg"
+                   target="_blank">гитхабе</a>. Впечатляюще, не правда ли? :)
+            </p>
+            <p>
+                Анимировать SVG можно с помощью css, javascript и помощью языка
+                <a href="https://ru.wikipedia.org/wiki/SMIL" target="_blank">SMIL</a>
+                (<a href="http://www.w3.org/TR/smil/smil-animation.html" target="_blank">немного документации</a>),
+                однако у последнего варианта есть фатальный недостаток, а именно поддержка браузером internet-explorer,
+                и я не говорю о каких-то древних версиях, вообще все не поддерживают, пруф прилагается -
+                <a href="http://caniuse.com/#feat=svg-smil" target="_blank">http://caniuse.com/#feat=svg-smil</a>.
+                Кстати, рекомендую этот сайт для проверки поддержки браузерами тех или иных возможностей.
+            </p>
+            <p>
+                Самый простой вариант что-либо анимировать это использовать CSS. Добавим чуть-чуть магии и сделаем
+                эффект “дыхания” или пульсации - <a href="http://jsfiddle.net/krontill/tv6mqyo5/1/" target="_blank">пример</a>.
+            </p>
+            <p>
+                Есть множество классных javascript библиотек для анимации SVG, вот малая их часть для примера -
+                Textures.js, <a href="http://d3js.org/" target="_blank">D3.js</a> (заточена для создания эффектной
+                интерактивной инфографики), Snap.svg, Raphaël.
+            </p>
+            <h3>Встраиваем</h3>
+            <p>
+                Итак, мы разобрались почему SVG это круто, модно, молодёжно, теперь рассмотрим варианты встраивания его
+                в страницу. Самый очевидный и крутой вариант вы уже видели в примерах выше - встраивание SVG прямо в
+                HTML-документ или инклудим (если используется php-движок или CMS) <code>&lt;?php include("music.svg");
+                ?&gt;</code>.
+            </p>
+            <p>
+                Еще варианты: <br>
+                <code>
+                    &lt;object type="image/svg+xml" data="music.svg" class="music"&gt; <br>
+                    &nbsp;&nbsp;music <br>
+                    &lt;/object&gt;
+                    <br>
+                </code>
+            </p>
+            <p>
+                Если не надо обращаться к элементам SVG, используя часть возможностей описанных выше, то есть
+                альтернативные варианты - добавление его как изображение <br>
+                <code>&lt;img src="music.svg" alt="Музыкальный центр"&gt;</code> <br>
+                или можно добавить через class и css <br>
+                <code>&lt;a href="/" class="music"&gt;music&lt;/a&gt;</code> <br>
+                <code>
+                    .music { <br>
+                    &nbsp;&nbsp;display: block; <br>
+                    &nbsp;&nbsp;text-indent: -9999px; <br>
+                    &nbsp;&nbsp;width: 100px; <br>
+                    &nbsp;&nbsp;height: 100px; <br>
+                    &nbsp;&nbsp;background: url(music.svg); <br>
+                    &nbsp;&nbsp;background-size: 100px 100px; <br>
+                    }
+                </code>
+            </p>
+            <p>
+                В этих трех вариантах SVG можно засунуть в
+                <a href="http://jsfiddle.net/krontill/9y1puwgr/"
+                   target="_blank">base64</a>, прописав вместо <code>data/url/src</code> код
+                <code>"data:image/svg+xml;base64,[data]"</code>
+                где [data] - это наш base64.
+                <a href="http://www.mobilefish.com/services/base64/base64.php" target="_blank">
+                    Base64 encoder and decoder</a> в помощь.
+            </p>
+            <p>
+                А также доступно встраивание векторной графики через теги <code>&lt;iframe&gt;</code> и
+                <code>&lt;embed&gt;</code>, но про эти теги вообще лучше забыть.
+            </p>
+            <h3>Элементы SVG</h3>
+            <p>
+                Adobe Illustrator создает первой строчкой
+                <code>&lt;?xml version="1.0" encoding="utf-8"?&gt;</code>, также добавляет DOCTYPE, всё это не нужно и
+                это можно смело выпилить.
+            </p>
+            <p>
+                Элемент <code>&lt;svg&gt;</code> - это контейнер, внутри которого находятся все детали SVG. Тег <code>
+                &lt;g&gt;</code> используется для группировки элементов. Элемент <code>&lt;title&gt;</code> - понятно,
+                что заголовок. Содержимое внутри элемента <code>&lt;desc&gt;</code> позволит обеспечить подробное
+                описание графики для пользователей скринридеров. Все что внутри тега <code>&lt;defs&gt;</code> не
+                отображается, тут может быть CSS или элементы которые будут использоваться позже с помощью привязки к
+                id. <code>&lt;use&gt;</code> используется для повторения элементов графики и ссылается на id с помощью
+                <code>xlink:href="#id"</code>. Элемент <code>&lt;symbol&gt;</code> представляет собой группу связных
+                элементов, у которых своя система координат и которые не отображаются на странице также как и <code>
+                &lt;defs&gt;</code>, до тех пор, пока к ним не обратиться через <code>&lt;use&gt;</code>. В SVG есть
+                фигуры, такие как прямоугольник (<code>&lt;rect&gt;</code>), круг (<code> &lt;circle&gt;</code>), контур
+                (<code>&lt;path&gt;</code>), текст (<code>&lt;text&gt;</code>), множество их - для подробного
+                ознакомления рекомендую
+                <a href="http://css-live.ru/articles/karmannoe-rukovodstvo-po-napisaniyu-svg-glava-2.html"
+                   target="_blank">Карманное руководство по написанию SVG</a>.
+            </p>
+            <h3>Фильтры</h3>
+            <p>
+                Это очень большая обширная тема, которой хватит еще на две подобные статьи поэтому рассмотрю вкратце.
+                Фильтры помогают модифицировать элементы как векторной, так и растровой графики для создания эффектов,
+                например <a href="http://jsfiddle.net/krontill/kj5rn11f/" target="_blank">размытие</a>. Для его создания
+                просто прописываем
+                <code> <br>
+                    &lt;filter id="myFilter1"&gt; <br>
+                    &nbsp;&nbsp; &lt;feGaussianBlur stdDeviation="10"/&gt; <br>
+                    &lt;/filter&gt; <br>
+                </code>
+            </p>
+            <p>
+                И указываем данный фильтр на том элементе, к которому будем применять. Можно фильтры прописывать и через
+                CSS, однако internet explorer нас тут подводит с поддержкой, поэтому лучше прописывать непосредственно в
+                SVG. Для примера поиграем со <span class="strike">шрифтами</span>
+                <a href="http://jsfiddle.net/krontill/mzd0kybt/" target="_blank">цветами</a>. Можно использовать
+                несколько фильтров на каждом элементе SVG.
+                <a href="https://www.w3schools.com/graphics/svg_filters_intro.asp" target="_blank">Список фильтров</a>.
+                Для примеров использования рекомендую почитать вот эти замечательные статьи -
+                <a href="http://html5.by/blog/svg-filters/" target="_blank">раз</a>,
+                <a href="http://www.smashingmagazine.com/2015/05/26/why-the-svg-filter-is-awesome/"
+                   target="_blank">два</a>.
+            </p>
+            <p>
+                Подведя итог, скажу следующее: друзья, используйте SVG! Он дает веб-разработчику новые возможности и
+                множество плюсов при использовании.
+            </p>
+            <img src="%=static=%img/assets/blog/svg-3.png" alt="svg filter">
+        </article>
+    </main>
+</div>
