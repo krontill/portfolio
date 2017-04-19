@@ -111,6 +111,14 @@ var data = {
           text: 'На сайте размещается информация о деятельности учреждения, его целях и задачах, а также география и предприятия.',
           date: 'Октябрь 2010 года',
           class: ''
+      },
+      htmlEmail: {
+          img: 'html-email.png',
+          url: '/home/html-email.html',
+          title: 'Создание html-верстки для электронных писем на проекте Dormis',
+          text: '',
+          date: 'Август 2016 год',
+          class: 'preview--primary'
       }
   }
 };
