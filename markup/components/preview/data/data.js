@@ -115,9 +115,17 @@ var data = {
       htmlEmail: {
           img: 'html-email.png',
           url: '/home/html-email.html',
-          title: 'Создание html-верстки для электронных писем на проекте Dormis',
-          text: '',
+          title: 'Вёрстка html-писем',
+          text: 'Создание html-верстки для электронных писем на проекте Dormis.',
           date: 'Август 2016 год',
+          class: 'preview--primary'
+      },
+      sas: {
+          img: 'sas.png',
+          url: '/home/sas.html',
+          title: 'Smart automation system',
+          text: 'Создание сайта для smart automation system.',
+          date: 'Июнь 2015 год',
           class: 'preview--primary'
       }
   }
