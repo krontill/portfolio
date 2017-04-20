@@ -121,7 +121,7 @@ var data = {
           class: 'preview--primary'
       },
       sas: {
-          img: 'sas.png',
+          img: 'sas.jpg',
           url: '/home/sas.html',
           title: 'Smart automation system',
           text: 'Создание сайта для smart automation system.',
