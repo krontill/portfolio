@@ -127,6 +127,14 @@ var data = {
           text: 'Создание сайта для smart automation system.',
           date: 'Июнь 2015 год',
           class: 'preview--primary'
+      },
+      bai: {
+          img: 'bai.png',
+          url: '/home/bai.html',
+          title: 'BAI: crm, сайт, админка',
+          text: 'Для BAI были переверстаны сайт, и его админская часть, а также страница crm.',
+          date: '2016 год',
+          class: 'preview--primary'
       }
   }
 };
