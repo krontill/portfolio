@@ -137,7 +137,7 @@ var data = {
           class: 'preview--primary'
       },
       dormis: {
-          img: 'bai.png',
+          img: 'dormis.jpg',
           url: '/home/dormis.html',
           title: 'Проект Dormis',
           text: 'Вёрстка сайта по бронированию квартир dormis.com.',
