@@ -124,7 +124,7 @@ var data = {
           img: 'sas.jpg',
           url: '/home/sas.html',
           title: 'Smart automation system',
-          text: 'Создание сайта для smart automation system.',
+          text: 'Создание сайта для smart automation system - проект умного дома.',
           date: 'Июнь 2015 год',
           class: 'preview--primary'
       },
@@ -140,7 +140,7 @@ var data = {
           img: 'dormis.jpg',
           url: '/home/dormis.html',
           title: 'Проект Dormis',
-          text: 'Вёрстка сайта по бронированию квартир dormis.com.',
+          text: 'Вёрстка сайта по поиску и бронированию квартир в различных городах и странах.',
           date: '2015-2017 года',
           class: 'preview--primary'
       }
