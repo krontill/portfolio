@@ -50,7 +50,12 @@ a {
         color: @link-hover;
     }
     .content & {
+        text-decoration: underline;
         color: @link-dark;
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
     }
 }
 
