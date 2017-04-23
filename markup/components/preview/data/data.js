@@ -135,6 +135,14 @@ var data = {
           text: 'Для BAI были переверстаны сайт, и его админская часть, а также страница crm.',
           date: '2016 год',
           class: 'preview--primary'
+      },
+      dormis: {
+          img: 'bai.png',
+          url: '/home/dormis.html',
+          title: 'Проект Dormis',
+          text: 'Вёрстка сайта по бронированию квартир dormis.com.',
+          date: '2015-2017 года',
+          class: 'preview--primary'
       }
   }
 };
