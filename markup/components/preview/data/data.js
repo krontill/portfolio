@@ -111,6 +111,38 @@ var data = {
           text: 'На сайте размещается информация о деятельности учреждения, его целях и задачах, а также география и предприятия.',
           date: 'Октябрь 2010 года',
           class: ''
+      },
+      htmlEmail: {
+          img: 'html-email.png',
+          url: '/home/html-email.html',
+          title: 'Вёрстка html-писем',
+          text: 'Создание html-верстки для электронных писем на проекте Dormis.',
+          date: 'Август 2016 год',
+          class: 'preview--primary'
+      },
+      sas: {
+          img: 'sas.jpg',
+          url: '/home/sas.html',
+          title: 'Smart automation system',
+          text: 'Создание сайта для smart automation system - проект умного дома.',
+          date: 'Июнь 2015 год',
+          class: 'preview--primary'
+      },
+      bai: {
+          img: 'bai.png',
+          url: '/home/bai.html',
+          title: 'BAI: crm, сайт, админка',
+          text: 'Для BAI были переверстаны сайт, и его админская часть, а также страница crm.',
+          date: '2016 год',
+          class: 'preview--primary'
+      },
+      dormis: {
+          img: 'dormis.jpg',
+          url: '/home/dormis.html',
+          title: 'Проект Dormis',
+          text: 'Вёрстка сайта по поиску и бронированию квартир в различных городах и странах.',
+          date: '2015-2017 года',
+          class: 'preview--primary'
       }
   }
 };
