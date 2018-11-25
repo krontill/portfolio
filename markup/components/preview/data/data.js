@@ -143,6 +143,14 @@ var data = {
           text: 'Вёрстка сайта по поиску и бронированию квартир в разных городах и странах.',
           date: '2015-2017 года',
           class: 'preview--primary'
+      },
+      omny: {
+          img: 'omny.jpg',
+          url: '/home/omny.html',
+          title: 'Прототип приложения Omny',
+          text: 'Создание прототипа приложения на react&redux для отслеживания поставок лекарств.',
+          date: '2018 год',
+          class: 'preview--primary'
       }
   }
 };
