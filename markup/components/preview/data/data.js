@@ -151,6 +151,14 @@ var data = {
           text: 'Создание прототипа приложения на react&redux для отслеживания поставок лекарств.',
           date: '2018 год',
           class: 'preview--primary'
+      },
+      apis: {
+          img: 'apis.jpg',
+          url: '/home/apis.html',
+          title: 'Приложение apis',
+          text: 'Создание приложения на react&redux для работы с файлами.',
+          date: '2018 год',
+          class: 'preview--primary'
       }
   }
 };
